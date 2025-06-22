@@ -4,7 +4,7 @@ import com.github.jenkins.notifications.notification_service.dto.request.Notific
 import com.github.jenkins.notifications.notification_service.dto.response.NotificationResponseDto;
 import com.github.jenkins.notifications.notification_service.exception.NotificationNotFoundException;
 import com.github.jenkins.notifications.notification_service.model.Notification;
-import com.github.jenkins.notifications.notification_service.repository.INotificationRepository;
+import com.github.jenkins.notifications.notification_service.repository.NotificationRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -12,11 +12,11 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Service
-public class NotificationServiceImpl implements INotificationService {
+public class NotificationServiceImpl implements NotificationService {
 
-    private final INotificationRepository notificationRepository;
+    private final NotificationRepository notificationRepository;
 
-    public NotificationServiceImpl(INotificationRepository INotificationRepository) {
+    public NotificationServiceImpl(NotificationRepository INotificationRepository) {
         this.notificationRepository = INotificationRepository;
     }
 
